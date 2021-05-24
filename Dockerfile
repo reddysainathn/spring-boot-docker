@@ -2,6 +2,7 @@ FROM maven:3.6.0-jdk-11-slim AS build
 WORKDIR /app
 COPY src .
 COPY pom.xml .
+RUN ls -larth
 RUN mvn -f /app/pom.xml clean install package
 
 FROM openjdk:11-jre-slim
